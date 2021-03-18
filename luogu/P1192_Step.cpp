@@ -1,6 +1,6 @@
 #include <iostream>
 #include <vector>
-// to avoid recursion,and just use relationships between index,store middle result in array
+//avoid recursion,use relationship between index,store middle result in array
 // int cal_num(int N, int K)
 // {
 //     if (N == 1||N==0)
@@ -19,7 +19,6 @@
 int main()
 {
     const int mod = 100003;
-
     int num_steps = 0;
     int max_step = 0;
     std::vector<int> results(1000000, 0);
@@ -36,7 +35,7 @@ int main()
         {
             results[i] = 2 * results[i - 1] - results[i - max_step - 1];
         }
-        // results can be very large,stroe it using mod
+        // results can be very large
         results[i] %= mod;
     }
     // +mod in case of borrowing when subtracting
